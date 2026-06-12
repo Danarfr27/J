@@ -1,40 +1,60 @@
-import TopBar from '../components/TopBar';
-import NavBar from '../components/NavBar';
-import Marquee from '../components/Marquee';
-import Sidebar from '../components/Sidebar';
-import GameGrid from '../components/GameGrid';
-import Footer from '../components/Footer';
+import TopBar from '../sections/TopBar';
+import Header from '../sections/Header';
+import NavBar from '../sections/NavBar';
+import NewsTicker from '../sections/NewsTicker';
+import LeftSidebar from '../sections/LeftSidebar';
+import CenterContent from '../sections/CenterContent';
+import RightSidebar from '../sections/RightSidebar';
+import Footer from '../sections/Footer';
+import FloatingWidgets from '../sections/FloatingWidgets';
+import Background from '../sections/Background';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-game-purple-800 via-game-purple-900 to-game-purple-900">
-      {/* Fixed background pattern */}
-      <div className="fixed inset-0 opacity-5 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+    <div className="min-h-screen relative">
+      {/* Fixed Background */}
+      <Background />
 
-      {/* Header */}
-      <TopBar />
-      <NavBar />
-      <Marquee />
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Top Bar */}
+        <TopBar />
 
-      {/* Main Content */}
-      <div className="relative max-w-7xl mx-auto px-4 py-6">
-        <div className="flex gap-6">
-          {/* Sidebar - hidden on mobile */}
-          <div className="hidden lg:block">
-            <Sidebar />
+        {/* Header */}
+        <Header />
+
+        {/* Navigation */}
+        <NavBar />
+
+        {/* News Ticker */}
+        <NewsTicker />
+
+        {/* Main Content Area */}
+        <main className="max-w-7xl mx-auto px-4 py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* Left Sidebar */}
+            <div className="lg:col-span-3">
+              <LeftSidebar />
+            </div>
+
+            {/* Center Content */}
+            <div className="lg:col-span-5">
+              <CenterContent />
+            </div>
+
+            {/* Right Sidebar */}
+            <div className="lg:col-span-4">
+              <RightSidebar />
+            </div>
           </div>
+        </main>
 
-          {/* Game Grid */}
-          <GameGrid />
-        </div>
+        {/* Footer */}
+        <Footer />
       </div>
 
-      {/* Footer */}
-      <Footer />
+      {/* Floating Widgets */}
+      <FloatingWidgets />
     </div>
   );
 }

@@ -1,39 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 270 70% 15%;
+    --background: 280 100% 8%;
     --foreground: 0 0% 100%;
-    --card: 270 70% 18%;
+    --card: 280 100% 12%;
     --card-foreground: 0 0% 100%;
-    --popover: 270 70% 18%;
+    --popover: 280 100% 12%;
     --popover-foreground: 0 0% 100%;
-    --primary: 270 70% 35%;
+    --primary: 280 100% 40%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 270 50% 25%;
+    --secondary: 280 60% 20%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 270 30% 30%;
-    --muted-foreground: 0 0% 70%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --muted: 280 40% 25%;
+    --muted-foreground: 280 20% 70%;
     --accent: 45 100% 50%;
     --accent-foreground: 0 0% 0%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 45 100% 50% / 0.3;
-    --input: 0 0% 100% / 0.15;
+    --border: 280 60% 30%;
+    --input: 280 60% 30%;
     --ring: 45 100% 50%;
     --radius: 0.5rem;
-    
-    --color-primary: #6A1B9A;
-    --color-primary-dark: #4A148C;
-    --color-primary-light: #9C27B0;
-    --color-gold: #FFD700;
-    --color-gold-dark: #FFA000;
-    --color-bg-dark: #2D0A4E;
-    --color-success: #4CAF50;
-    --color-danger: #F44336;
-    --color-warning: #FFC107;
+    --sidebar-background: 280 100% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 280 60% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 280 60% 30%;
+    --sidebar-ring: 45 100% 50%;
   }
 }
 
@@ -41,38 +41,61 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-[#2D0A4E] text-white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @apply bg-game-purple-900 text-white antialiased;
+    font-family: 'Inter', Arial, sans-serif;
   }
 }
 
-/* News ticker animation */
-@keyframes ticker-scroll {
-  0% {
-    transform: translateX(0);
+@layer components {
+  .game-card-overlay {
+    @apply absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300;
   }
-  100% {
-    transform: translateX(-50%);
+  
+  .game-card:hover .game-card-overlay {
+    @apply opacity-100;
   }
-}
 
-.animate-ticker {
-  animation: ticker-scroll 40s linear infinite;
+  .gradient-purple {
+    background: linear-gradient(135deg, #4A0072 0%, #7B1FA2 50%, #9C27B0 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 50%, #FF8F00 100%);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3), inset 0 0 10px rgba(255, 215, 0, 0.1);
+  }
+
+  .nav-item {
+    @apply px-3 py-2 text-xs font-bold text-white/80 hover:text-white hover:bg-game-purple-600 transition-all duration-200;
+  }
+
+  .nav-item.active {
+    @apply bg-game-yellow text-black;
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #2D0A4E;
+  background: #2D0040;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6A1B9A;
-  border-radius: 3px;
+  background: #7B1FA2;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

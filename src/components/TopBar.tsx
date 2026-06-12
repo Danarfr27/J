@@ -66,16 +66,10 @@ export default function TopBar() {
               {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
             </button>
           </div>
-          <button
-            onClick={() => (window.location.href = 'https://7meterslotwin1.vercel.app/')}
-            className="px-4 py-1.5 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded transition-all duration-200 hover:scale-105"
-          >
+          <button className="px-4 py-1.5 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded transition-all duration-200 hover:scale-105">
             MASUK
           </button>
-          <button
-            onClick={() => (window.location.href = 'https://7meterslotwin1.vercel.app/')}
-            className="px-4 py-1.5 bg-game-yellow hover:bg-yellow-400 text-black font-bold text-sm rounded transition-all duration-200 hover:scale-105"
-          >
+          <button className="px-4 py-1.5 bg-game-yellow hover:bg-yellow-400 text-black font-bold text-sm rounded transition-all duration-200 hover:scale-105">
             DAFTAR
           </button>
           <div className="w-8 h-5 rounded overflow-hidden border border-white/30 ml-1">

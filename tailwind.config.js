@@ -11,10 +11,8 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6A1B9A",
-          dark: "#4A148C",
-          light: "#9C27B0",
-          foreground: "#ffffff",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -29,9 +27,8 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#FFD700",
-          dark: "#FFA000",
-          foreground: "#000000",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -41,20 +38,27 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        purple: {
-          900: '#2D0A4E',
-          800: '#4A148C',
-          700: '#6A1B9A',
-          600: '#7B1FA2',
-          500: '#9C27B0',
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
         },
-        gold: {
-          DEFAULT: '#FFD700',
-          dark: '#FFA000',
+        'game-purple': {
+          900: '#1A0030',
+          800: '#2D0040',
+          700: '#3D0058',
+          600: '#4A0072',
+          500: '#7B1FA2',
+          400: '#9C27B0',
+          300: '#CE93D8',
         },
-        success: '#4CAF50',
-        danger: '#F44336',
-        warning: '#FFC107',
+        'game-gold': '#FFD700',
+        'game-yellow': '#FFC107',
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -65,7 +69,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glow: "0 0 15px rgba(255, 215, 0, 0.3)",
+        'game': '0 4px 8px rgba(0,0,0,0.3)',
+        'glow': '0 0 15px rgba(255,215,0,0.5)',
       },
       keyframes: {
         "accordion-down": {
@@ -80,21 +85,31 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+        "marquee": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 5px rgba(255, 215, 0, 0.3)" },
-          "50%": { boxShadow: "0 0 20px rgba(255, 215, 0, 0.6)" },
+        "pulse-badge": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
+        },
+        "bounce-badge": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-3px)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "marquee": "marquee 40s linear infinite",
+        "pulse-badge": "pulse-badge 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "bounce-badge": "bounce-badge 1.5s infinite",
         "float": "float 3s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },

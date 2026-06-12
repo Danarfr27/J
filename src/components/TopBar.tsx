@@ -66,12 +66,16 @@ export default function TopBar() {
               {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
             </button>
           </div>
-          <button className="px-4 py-1.5 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded transition-all duration-200 hover:scale-105">
-            MASUK
-          </button>
-          <button className="px-4 py-1.5 bg-game-yellow hover:bg-yellow-400 text-black font-bold text-sm rounded transition-all duration-200 hover:scale-105">
-            DAFTAR
-          </button>
+          <a href="https://7meterslotwin1.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-0">
+            <button className="px-4 py-1.5 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded transition-all duration-200 hover:scale-105">
+              MASUK
+            </button>
+          </a>
+          <a href="https://7meterslotwin1.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-0">
+            <button className="px-4 py-1.5 bg-game-yellow hover:bg-yellow-400 text-black font-bold text-sm rounded transition-all duration-200 hover:scale-105">
+              DAFTAR
+            </button>
+          </a>
           <div className="w-8 h-5 rounded overflow-hidden border border-white/30 ml-1">
             <div className="w-full h-full bg-red-600 flex items-center justify-center">
               <span className="text-[8px] text-white font-bold">ID</span>
